@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Toggelable and Dynamic Tabs</title>
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+      <h2 class="">Toggelable and Dynamic Tabs</h2>
+    </nav>
+    <div class="container my-50">
+      <ul class="nav nav-tabs">
+        <li class="nav-link active" value="1">CC</li>
+        <li class="nav-link" value="2">Wt</li>
+        <li class="nav-link" value="3">SDAM</li>
+        <li class="nav-link" value="4">DAA</li>
+      </ul>
+      <div class="contents my-20">
+        <div class="content1" value="1">
+          <h2>Cloud Computing</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            praesentium sit aliquid reiciendis totam error. Voluptate, quisquam.
+            Explicabo impedit autem quibusdam eos, ipsum aut neque alias
+            laboriosam consequuntur, consectetur ipsam porro voluptates?
+            Voluptas rerum eos quo consequatur alias. Repellendus quae explicabo
+            dolor mollitia doloribus quis excepturi aliquid eius non deleniti!
+          </p>
+        </div>
+        <div class="content2 hide" value="2">
+          <h2>Web Technology</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+            accusantium in ipsa totam aliquid neque distinctio nesciunt
+            exercitationem, consectetur deserunt laborum aliquam, quisquam sint
+            nisi et quas eius mollitia illo obcaecati nostrum ipsam incidunt
+            cupiditate porro! Impedit neque cupiditate alias excepturi
+            voluptatem, ipsam, nostrum aperiam suscipit laborum, quia
+            consequatur molestias.
+          </p>
+        </div>
+        <div class="content3 hide" value="3">
+          <h2>Software Design And Modelling</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            sint consectetur deleniti impedit voluptate dolorum porro cum, quam,
+            iure eligendi atque recusandae minus totam ratione! Veritatis
+            voluptatum illo dolores mollitia. Commodi deserunt magnam
+            repudiandae iste qui ut voluptatum incidunt quasi odio tempore,
+            fugit officia mollitia iusto eveniet nulla natus excepturi.
+          </p>
+        </div>
+        <div class="content4 hide" value="4">
+          <h2>Design And Analysis of Algorithm</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum amet
+            laudantium cum quis, aliquam et beatae magnam recusandae, quisquam
+            hic necessitatibus ea delectus eligendi consequuntur at commodi
+            maxime qui pariatur harum numquam quibusdam accusantium architecto
+            exercitationem nisi! Voluptate quasi temporibus voluptatum iste
+            beatae nobis! Tempore cum ducimus dolor magni repellendus?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".nav-link").click(function () {
+        let id = $(this).attr("value");
+        let string = ".content" + id;
+        $(".contents div").addClass("hide");
+        $(string).removeClass("hide");
+      });
+    });
+  </script>
+</html>

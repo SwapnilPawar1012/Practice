@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search & Sort Array Elements</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 0;
+      }
+
+      .container,
+      .box {
+        background: aliceblue;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      hr {
+        margin: 35px 0;
+      }
+
+      .add-sort {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      input,
+      button {
+        font-size: large;
+        padding: 8px;
+        border: 1px solid #999;
+        border-radius: 6px;
+      }
+
+      button {
+        background: #73beff;
+      }
+
+      #arrayDisplay,
+      #searchDisplay,
+      #sortArrayDisplay {
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="add-sort">
+        <h2>Enter Numbers (comma-separeted, eg. 1, 2, 3)</h2>
+        <input
+          type="text"
+          id="numbersInput"
+          placeholder="Enter numbers separeted by comma"
+        />
+        <button onclick="addNumbers()">Add Element</button>
+        <button onclick="sortElements()">Sort Array</button>
+      </div>
+      <hr />
+      <div class="search">
+        <h2>Search Element in Array</h2>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Enter number to array"
+        />
+        <button onclick="searchNumber()">Search Number</button>
+      </div>
+    </div>
+
+    <div class="box">
+      <div>
+        <h2>Number in Array:</h2>
+        <div id="arrayDisplay">[]</div>
+      </div>
+      <hr />
+      <div>
+        <h2>Sorted Array:</h2>
+        <div id="sortArrayDisplay">[]</div>
+      </div>
+      <hr />
+      <div>
+        <h2>Search Result:</h2>
+        <div id="searchDisplay"></div>
+      </div>
+    </div>
+
+    <script>
+      let numbers = [];
+
+      function addNumbers() {
+        const input = document.getElementById("numbersInput");
+        const numArray = input.value
+          .split(",")
+          .map((num) => parseInt(num.trim(), 10));
+        const validNumbers = numArray.filter((num) => !isNaN(num));
+        numbers = numbers.concat(validNumbers);
+        displayArray();
+        input.value = "";
+        input.focus();
+      }
+
+      function displayArray() {
+        const arrayDisplay = document.getElementById("arrayDisplay");
+        arrayDisplay.textContent = "[" + numbers.join(", ") + "]";
+      }
+
+      function displaySortArray() {
+        const arrayDisplay = document.getElementById("sortArrayDisplay");
+        arrayDisplay.textContent = "[" + numbers.join(", ") + "]";
+      }
+
+      function sortElements() {
+        numbers.sort((a, b) => a - b);
+        displaySortArray();
+      }
+
+      function searchNumber() {
+        const numToSeach = parseInt(
+          document.getElementById("searchInput").value,
+          10
+        );
+        const index = numbers.indexOf(numToSeach);
+        const resultDisplay = document.getElementById("searchDisplay");
+
+        if (index !== -1) {
+          resultDisplay.textContent = `Number ${numToSeach} index at ${index}`;
+        } else {
+          resultDisplay.textContent = "Number not found.";
+        }
+      }
+    </script>
+  </body>
+</html>

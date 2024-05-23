@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .login {
+        background: aliceblue;
+        padding: 20px;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 30px 0;
+      }
+
+      input,
+      button,
+      .btn {
+        font-size: 18px;
+        padding: 8px;
+        border: 1px solid #999;
+        border-radius: 6px;
+      }
+
+      button,
+      .btn {
+        background: rgb(116, 190, 255);
+        text-decoration: none;
+        color: black;
+      }
+
+      form {
+        display: grid;
+        gap: 20px;
+      }
+
+      form div {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: baseline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <div>
+          <label for="username">email</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div>
+          <label for="password">password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <button type="submit">Login</button>
+        <p>
+          Already have an account,
+          <a href="./register.html">Register</a>
+        </p>
+      </form>
+      <div>
+        <a class="btn" href="./home.html">Home</a>
+      </div>
+    </div>
+  </body>
+</html>

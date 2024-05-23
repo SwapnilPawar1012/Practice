@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chessboard</title>
+    <style>
+      body {
+        display: grid;
+        justify-content: center;
+        background: rgb(170, 211, 246);
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .chessboard {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+      }
+      .board {
+        width: 100px;
+        height: 100px;
+      }
+      .white {
+        background: white;
+      }
+      .black {
+        background: black;
+      }
+
+      @media (max-width: 800px) {
+        .board {
+          width: 75px;
+          height: 75px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .board {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .board {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chessboard</h1>
+    <div class="chessboard"></div>
+    <script>
+      const board = document.querySelector(".chessboard");
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          const square = document.createElement("div");
+          square.className =
+            "board" + ((i + j) % 2 === 0 ? " white" : " black");
+          board.append(square);
+        }
+      }
+    </script>
+  </body>
+</html>

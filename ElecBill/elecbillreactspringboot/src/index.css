@@ -1,0 +1,56 @@
+#root {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  font-size: x-large;
+  margin: 50px;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-container {
+  display: flex;
+  gap: 150px;
+}
+
+.electricity-bill-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 300px;
+  background: aliceblue;
+  border-radius: 6px;
+}
+
+.electricity-bill {
+  width: 300px;
+  background: aliceblue;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.electricity-bill div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  height: 40px;
+  border: 2px solid #999;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 22px;
+}
+
+button {
+  height: 40px;
+  border: 2px solid #999;
+  border-radius: 6px;
+  background-color: rgb(84, 84, 223);
+  color: white;
+  font-size: 18px;
+}
